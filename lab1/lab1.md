@@ -120,8 +120,15 @@ minikube kubectl -- logs service/vault
 ```
 >![vaultweb2](image/5.jpg)
 
+- Введем полученый токен и авторизуемся:
+
+>![vaultweb2](image/6.jpg)
 - Для остановки minikube cluster вы можете воспользоваться командой
 
 ```bash
 minikube stop
 ```
+---
+-Схема:
+
+>![vaultweb2](image/7.png)

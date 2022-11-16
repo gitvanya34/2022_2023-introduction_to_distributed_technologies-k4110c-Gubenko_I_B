@@ -7,6 +7,7 @@ Author: Gubenko Ivan Borisovich
 Lab: Lab1  
 Date of create: 16.10.2022  
 Date of finished: 17.11.2022  
+
 ---
 
 ## Лабораторная работа №1 "Установка Docker и Minikube, мой первый манифест."

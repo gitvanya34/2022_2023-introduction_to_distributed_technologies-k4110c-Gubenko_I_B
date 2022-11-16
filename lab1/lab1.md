@@ -47,10 +47,10 @@ alias kubectl="minikube kubectl --"
 minikube dashboard
 ```
 - Получаем вывод в терминал:
-![dashboardTer](image/1.jpg)
+>![dashboardTer](image/1.jpg)
 
 - Переходим по адресу в браузере и получаем веб-страницу с dashboard:
-![dashboardWeb](image/2.jpg)
+>![dashboardWeb](image/2.jpg)
 
 - Проверим алиас и посмотрим список запущенных подов командой:
 ```bash
@@ -86,11 +86,10 @@ kubectl apply -f /home/user/Документы/vvrt/1/vault.yaml
 ```bash
 kubectl get pod
 ```
->```bash
+```bash
 NAME    READY   STATUS    RESTARTS   AGE
 vault   1/1     Running   0          28s
 ```
-
 
 - После этого вам необходимо будет создать сервис для доступа к этому контейнеру, самый просто вариант - это выполнить команду: 
 > Эта команда будет работать только если ваш "под" имеет имя `vault`:
@@ -103,7 +102,7 @@ minikube kubectl -- expose pod vault --type=NodePort --port=8200
 ```bash
 minikube kubectl -- port-forward service/vault 8200:8200
 ```
->```bash
+```bash
 Forwarding from 127.0.0.1:8200 -> 8200
 Forwarding from [::1]:8200 -> 8200
 Handling connection for 8200
@@ -113,13 +112,13 @@ Handling connection for 8200
 - minikube прокинет порт вашего компьютера в контейнер и вы сможете зайти в vault по ссылке [http://localhost:8200](http://localhost:8200)
 
 - После перехода по ссылке открывается веб-интерфейс:
-![vaultweb](image/4.jpg)
+>[vaultweb](image/4.jpg)
 
 - Далее необходимо войти в vault ипользуя токен который мы можем найти в лога командой, а не генерировать заново. 
 ```bash
 minikube kubectl -- logs service/vault
 ```
-![vaultweb](image/5.jpg)
+>![vaultweb](image/5.jpg)
 
 - Для остановки minikube cluster вы можете воспользоваться командой
 

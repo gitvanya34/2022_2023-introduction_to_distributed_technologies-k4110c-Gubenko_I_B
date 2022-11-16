@@ -47,11 +47,9 @@ alias kubectl="minikube kubectl --"
 minikube dashboard
 ```
 - Получаем вывод в терминал:
-
 ![dashboardTer](image/1.jpg)
 
 - Переходим по адресу в браузере и получаем веб-страницу с dashboard:
-
 ![dashboardWeb](image/2.jpg)
 
 - Проверим алиас и посмотрим список запущенных подов командой:

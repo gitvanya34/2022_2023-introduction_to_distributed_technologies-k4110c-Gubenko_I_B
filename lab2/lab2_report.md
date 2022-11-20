@@ -18,7 +18,7 @@
 - Проверьте логи контейнеров, приложите логи в отчёт.
 
 ### Ход работы
-#### 0. Запуск
+### 0. Запуск
 
 - Разворачиваем minikube cluster
   
@@ -31,7 +31,7 @@ minikube start
 minikube dashboard
 ```
 
-#### 1. Namespace
+### 1. Namespace
 - Создадим namespace lab2
 ```yaml
 apiVersion: v1
@@ -60,7 +60,7 @@ lab2ns                 Active   3m3s
 
 ```
 
-#### 2. Configmap
+### 2. Configmap
 - Создадим Configmap env-cm
 
 ```yaml
@@ -88,7 +88,7 @@ NAME               DATA   AGE
 env-cm             2   
 ```
 
-#### 3. Deployment
+### 3. Deployment
 - Создадим Deployment:
 ```yaml
 apiVersion: apps/v1
@@ -148,7 +148,7 @@ lab2app-deployment-8466bc8b9c-ldx8z   1/1     Running   0          20m   172.17.
 lab2app-deployment-8466bc8b9c-lpp5m   1/1     Running   0          20m   172.17.0.3   minikube   <none>           <none>
 ```
 
-#### 4. Service
+### 4. Service
 - Создадим сервис:
 
 ```yaml
@@ -181,7 +181,7 @@ NAME           TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE
 lab2-service   ClusterIP   10.96.135.245   <none>        3000/TCP   32s
 ```
 
-#### 5. Проброс портов
+### 5. Проброс портов
 - Пробросим порты
 ```bash
 kubectl -n lab2ns port-forward service/lab2-service 3000:3000
@@ -194,16 +194,16 @@ Handling connection for 3000
 Handling connection for 3000
 ```
 
-#### 6. Браузер
+### 6. Браузер
 Переходим по ссылке в браузере 127.0.0.1:3000/
 
 - Открывается страница:
 >![vaultweb2](image/1.jpg)
 
 - В дашборде:
->![vaultweb2](image/1.jpg)
+>![vaultweb2](image/2.jpg)
 
-#### 7. Логи
+### 7. Логи
 - Посмотрим лог сервиса:
 ```bash
 kubectl -n lab2ns logs service/lab2-service
@@ -245,5 +245,5 @@ Server started on port 3000
 ```
 
 
-#### 8. Схема
+### 8. Схема
 >![vaultweb2](image/0.png)

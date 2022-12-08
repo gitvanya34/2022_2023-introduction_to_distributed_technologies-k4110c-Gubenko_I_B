@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: lab4app-replicaset
+  labels:
+    app: lab4app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: lab4app
+  template:
+    metadata:
+      labels:
+        app: lab4app
+    spec:        
+      containers:
+      - name: lab4-container
+        image: ifilyaninitmo/itdt-contained-frontend:master
+        ports:
+        - containerPort: 3000
+        env:
+        - name: REACT_APP_USERNAME
+          valueFrom:
+            configMapKeyRef:
+              name: env-cm
+              key: ReactAppUserName
+        - name: REACT_APP_COMPANY_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: env-cm
+              key: ReactAppCompanyName

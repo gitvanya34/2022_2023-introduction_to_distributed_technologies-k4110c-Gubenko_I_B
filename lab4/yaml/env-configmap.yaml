@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: env-cm
+data:
+    ReactAppUserName: Ivan
+    ReactAppCompanyName: ITMO

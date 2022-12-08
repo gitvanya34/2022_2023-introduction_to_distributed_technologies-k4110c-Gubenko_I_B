@@ -89,7 +89,7 @@ kubernetes-dashboard   dashboard-metrics-scraper-b74747df5-b9jwl   0/1     Conta
 kubernetes-dashboard   kubernetes-dashboard-57bbdc5f89-nrp2v       0/1     ContainerCreating   0               42s
 ```
 
-### 3. Сalicoctl
+### 1. Сalicoctl
 
 -  Из документации добавим файл calicoctl.yaml
 ```bash
@@ -168,7 +168,7 @@ zone-parnas-ippool     53s
 
 
 
-### 4. ConfigMap, ReplicaSet
+### 2. ConfigMap, ReplicaSet
 - Создадим configMap
 ```yaml
 apiVersion: v1
@@ -227,7 +227,7 @@ replicaset.apps/lab4app-replicaset created
 
 
 
-### 5. Service
+### 3. Service
 
 ```yaml
 apiVersion: v1
@@ -268,7 +268,7 @@ zone-parnas-ippool     10.244.102.1/24   true   Always     Never       false    
 
 ```
 
-### 6. Запуск
+### 4. Запуск
 
 - Запустим работу сервиса 
 ```bash
